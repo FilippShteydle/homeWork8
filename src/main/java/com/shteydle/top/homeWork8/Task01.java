@@ -100,6 +100,26 @@ public class Task01 {
         Task01.printMatrix(matrix);
     }
 
+    //Детерминант матрицы
+    public static void getDeterminant(int size) {
+
+        int[][] matrix = Task01.getMatrix(size);
+        int determinant = 0;
+        System.out.println("Детерминант матрицы: ");
+        Task01.printMatrix(matrix);
+        System.out.print("равен: ");
+
+        if (size == 2) {
+            determinant = Math.abs(matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]);
+        }
+        if (size == 3) {
+            determinant = Math.abs(matrix[0][0] * matrix[1][1] * matrix[2][2] + matrix[0][1] * matrix[1][2] * matrix[2][0] +
+                    matrix[1][0] * matrix[2][1] * matrix[0][2] - matrix[0][2] * matrix[1][1] * matrix[2][0] -
+                    matrix[0][1] * matrix[1][0] * matrix[2][2] - matrix[0][0] * matrix[1][2] * matrix[2][1]);
+        }
+        System.out.println(determinant);
+    }
+
     // печать матрицы
     public static void printMatrix (int[][] matrix) {
         for (int[] row : matrix) {
