@@ -11,7 +11,7 @@ public class Main {
         System.out.print(" 2 - выполнить сложение матриц; \n 3 - выполнить умножение матриц; \n 4 - выполнить умножение матрицы на скаляр;" +
                 "\n 5 - определить детерминант матрицы.\n 6 - создать массив строк\n");
         int m = scanner.nextInt();
-        if (m < 6) {
+        if (m < 5) {
             System.out.print("Введите размер матрицы: ");
             int size = scanner.nextInt();
             if (m == 0) {
@@ -32,6 +32,12 @@ public class Main {
                 Task01.getMutipScalar(size, scalar);
             }
         }
+        
+        if (m == 5) {
+            System.out.println("Выберите, какая матрица вам нужна: 2 - для матрицы 2х2, 3 - для матрицы 3х3");
+            Task01.getDeterminant(scanner.nextInt());
+        }
+        
         if (m == 6) {
             System.out.print("Укажите количество строк: ");
             int n = scanner.nextInt();
